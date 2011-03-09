@@ -1,1 +1,9 @@
-DERP
+INTRODUCTION
+SQLcraft is a suite of PHP scripts designed to ease Minecraft administration tasks that require delving into a database.
+
+FEATURES
+*View KiwiAdmin's banlist table and add bans
+	*Ban removal is planned
+
+INSTALLATION
+At this time installation is only possible if you make your own auth.php file in the SQLcraft folder with sufficient data to connect to a MySQL database. This should be fixed soon with a proper configuration file.

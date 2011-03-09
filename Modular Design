@@ -1,0 +1,19 @@
+SQLcraft will mainly use directory structure and PHP loops/includes in order to achieve the modular design of the project.
+This file is both a personal reference on how to structure the project, as well as a reference for those that wish to help.
+Not all of the referenced files exist yet; this reference is intended to be future proof so that scripts do not need to be updated later.
+Replace *'s with values.
+
+
+<?php
+	$page_title = *
+	include("../../tpl1.php")
+?>
+
+<?php	
+	include("../../tpl2.php")
+?>
+
+The files tpl1.php and tpl2.php would contain all of the template HTML for SQLcraft, and the navigation menu would be generated based on directory names under the 'modules' directory.
+This makes adding modules a drag-and-drop operation.
+
+This is still a WIP and any feedback/suggestions on the structure would be greatly appreciated.
