@@ -6,4 +6,8 @@ FEATURES
 	*Ban removal is planned
 
 INSTALLATION
-At this time installation is only possible if you make your own auth.php file in the SQLcraft folder with sufficient data to connect to a MySQL database. This should be fixed soon with a proper configuration file.
+Download the files and set your configuration in config.php
+
+CHANGELOG
+	03.09.2011-8:31AM
+		Configuration file now works
