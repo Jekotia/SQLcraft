@@ -1,13 +1,23 @@
 INTRODUCTION
-SQLcraft is a suite of PHP scripts designed to ease Minecraft administration tasks that require delving into a database.
+	SQLcraft is a PHP web-application currently in early development.
+	The goal of the project is to create a modular web-panel to ease the administration of MySQL and SQLite databases used by Minecraft servers.
+	The project is free, open source, and welcomes collaborators. 
 
 FEATURES
-*View KiwiAdmin's banlist table and add bans
-	*Ban removal is planned
+	View KiwiAdmin's banlist table and add bans
+
+TODO
+	Add unban functionality to the KiwiAdmin module
+	For lack of a better term, get command injection working on linux to automatically recache the banlist from MySQL when a change is made
 
 INSTALLATION
-Download the files and set your configuration in config.php
+	Download the files and set your configuration in config.php
 
 CHANGELOG
 	03.09.2011-8:31AM
 		Configuration file now works
+	03.09.2011-12:43PM
+		Added additional variables to config.php
+		Added test.php to SQLcraft
+		Experimental support for 'ka reload' 'injection' into server screen
+			^(this will only ettempt to execute if $sc_local AND $sc_linux == true, and even then, the correct screen name MUST be specified)

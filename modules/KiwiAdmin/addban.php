@@ -28,21 +28,25 @@
 				//$addban_admin = filter_var($addban_admin, FILTER_FLAG_STRIP_HIGH);
 			
 			echo "".$addban_name." is to be banned for ''".$addban_reason.",'' by ".$addban_admin."";
-			echo "</br>Executing query... ";
+			echo "<br />Executing query... ";
 
 			$query = "INSERT INTO banlist (name,reason,admin)
 			VALUES ('".$addban_name."','".$addban_reason."','".$addban_admin."')";
 			if (!mysql_query($query))
 				{
-				echo "Error updating database! Either this player is already banned or you managed to break one of the most basic scripts in all of Minecraft...</br>";
+				echo "<br />Error updating database! Either this player is already banned or you managed to break SQLcraft";
 				}
 			else
 				{
 				mysql_query($query);
-				echo "Ban successful!</br>";
+				if ($sc_linux == true AND $sc_local == true)
+				{
+					shell_exec("screen -S SCREEN-NAME-HERE -X eval stuff 'ka reload'");
 				}
-			echo "Click <a href='index.php'>here</a> to continue.";
+				echo "<br />Ban successful!";
+				}
+			echo "<br />Click <a href='index.php'>here</a> to continue.";
 		?>
-		</br>
+		<br />
 	</body>
 </html>
