@@ -5,12 +5,15 @@ Replace *'s with values.
 
 
 <?php
-	$page_title = *
-	include("../../tpl1.php")
+		include_once '../../config.php';
+		include_once ''.$sc_path_sc.'auth.php';
+		include_once ''.$sc_path_sc.'modules/ModuleName/config.php';
+		$page_title = 'SQLcraft - Module Name - Name of Page Within Module';
+		include_once ''.$sc_path_sc.'tpl1.php';
 ?>
-
-<?php	
-	include("../../tpl2.php")
+	Module specific code
+<?php		
+		include_once ''.$sc_path_sc.'tpl2.php';
 ?>
 
 The files tpl1.php and tpl2.php would contain all of the template HTML for SQLcraft, and the navigation menu would be generated based on directory names under the 'modules' directory.

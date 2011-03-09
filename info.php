@@ -1,8 +1,10 @@
 <?php	
+	//includes config and MySQL auth
+		include_once 'config.php';
+		include_once ''.$sc_path_sc.'auth.php';
+
 	//Reports the document root
 		echo "SQLcraft's Document Root is ".$_SERVER["DOCUMENT_ROOT"]."";
-		include_once 'config.php';
-		include_once 'auth.php';
 	
 	//Confirms MySQL is connecting
 		if ($con)

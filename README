@@ -4,20 +4,35 @@ INTRODUCTION
 	The project is free, open source, and welcomes collaborators. 
 
 FEATURES
-	View KiwiAdmin's banlist table and add bans
+	KiwiAdmin Module
+		View the banlist table
+		Add bans to the MySQL database table
+		Remove bans from the MySQL database table
+		*LINUX ONLY* Send 'reloadka' to server whenever a record is added or removed from the database 
 
 TODO
-	Add unban functionality to the KiwiAdmin module
-	For lack of a better term, get command injection working on linux to automatically recache the banlist from MySQL when a change is made
+	Feature requests (mainly plugins to support)
+	Home and Warp converters for moving between home and warp plugins without losing data
+	Basic theme so it isn't as ugly
+	Directory-based navigation menu generation
 
 INSTALLATION
 	Download the files and set your configuration in config.php
 
 CHANGELOG
-	03.09.2011-8:31AM
+	03.09.2011-08:31AM
 		Configuration file now works
-	03.09.2011-12:43PM
-		Added additional variables to config.php
-		Added test.php to SQLcraft
-		Experimental support for 'ka reload' 'injection' into server screen
+	03.09.2011-12:45PM
+		SQLcraft core
+			Added additional variables to config.php
+			Added test.php to SQLcraft
+		KiwiAdmin Module
+			Added experimental support for 'ka reload' 'injection' into server screen
 			^(this will only ettempt to execute if $sc_local AND $sc_linux == true, and even then, the correct screen name MUST be specified)
+	03.09.2011-05:42PM
+		KiwiAdmin Module
+			Added a config file to specify the name of the banlist table
+			Added unban functionality
+			Implemented 'reloadka' with the help of lahwran and Jomik <3
+			The entry of no-name rows is now impossible
+			Put ban and unban ABOVE the ban list so that they are easily accessable regardless of the number of listed bans

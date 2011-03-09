@@ -12,9 +12,9 @@
 	//Set this to true only if your Minecraft server is running on the same server as SQLcraft
 	//This enables local-only features like SQLite support
 		$sc_local			=	false;
-	//The absolute path to SQLcraft
+	//The absolute path to SQLcraft. Include ALL /'s
 		$sc_path_sc		 	=	'C:/xampp/htdocs/SQLcraft/';
-	//The absolute path to the Minecraft server
+	//The absolute path to the Minecraft server. include ALL /'s
 		$sc_path_mc			=	'C:/SQLcraft/';
 	//Enables linux only functionality, such as sending commands to a MC server running in a screen!
 	//Reliant on $sc_local = true
