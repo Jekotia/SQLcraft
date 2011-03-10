@@ -1,9 +1,10 @@
 <?php
 		include_once '../../config.php';
-		include_once ''.$sc_path_sc.'auth.php';
-		include_once ''.$sc_path_sc.'modules/KiwiAdmin/config.php';
+		include_once ''.$sc_path_fs.'auth.php';
+		include_once ''.$sc_path_fs.'modules/KiwiAdmin/config.php';
 		$page_title = 'SQLcraft - KiwiAdmin Module - Ban Script';
-		include_once ''.$sc_path_sc.'tpl1.php';
+		$page = 'KiwiAdmin';
+		include_once ''.$sc_path_fs.'tpl1.php';
 
 	//Gets ban query data from $_POST
 		$addban_name = $_POST['addban_name'];
@@ -49,5 +50,5 @@
 			}
 			echo "<br />Click <a href='index.php'>here</a> to continue.";
 		}
-		include_once ''.$sc_path_sc.'tpl2.php';
+		include_once ''.$sc_path_fs.'tpl2.php';
 ?>

@@ -1,9 +1,10 @@
 <?php
 		include_once '../../config.php';
-		include_once ''.$sc_path_sc.'auth.php';
-		include_once ''.$sc_path_sc.'modules/KiwiAdmin/config.php';
+		include_once ''.$sc_path_fs.'auth.php';
+		include_once ''.$sc_path_fs.'modules/KiwiAdmin/config.php';
 		$page_title = 'SQLcraft - KiwiAdmin Module - Overview';
-		include_once ''.$sc_path_sc.'tpl1.php';
+		$page = 'KiwiAdmin';
+		include_once ''.$sc_path_fs.'tpl1.php';
 ?>
 		<form action="ban.php" method="post" name="Ban Player">
 			<fieldset>
@@ -41,12 +42,13 @@
 				<input type="submit" value="Unban Player" />
 			</fieldset>
 		</form>
-		<table border='1' cellspacing='0' cellpadding='0'>
+		<br />
+		<table border='1' cellspacing='0' cellpadding='0' width="100%">
 			<tr>
-				<th>name</th>
-				<th>reason</th>
-				<th>admin</th>
-				<th>time</th>
+				<th width="15%">name</th>
+				<th width="30%">reason</th>
+				<th width="15%">admin</th>
+				<th width="20%">time</th>
 			</tr>			
 				<?php	
 					$result = mysql_query("SELECT * FROM banlist");
@@ -64,4 +66,4 @@
 				?>
 		</table>
 		
-		<?php include_once ''.$sc_path_sc.'tpl2.php'; ?>
+		<?php include_once ''.$sc_path_fs.'tpl2.php'; ?>

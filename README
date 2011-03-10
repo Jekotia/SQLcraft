@@ -17,11 +17,20 @@ TODO
 	Directory-based navigation menu generation
 
 INSTALLATION
-	Download the files and set your configuration in config.php
+	[IMPORTANT] YOU are responsible for securing this from unauthorized use until I create a login/authorization system. I recomend using htaccess+htpasswd or equivalent; you can find a good tutorial on htaccess and htpasswd [url=http://httpd.apache.org/docs/current/howto/auth.html]here[/url].
+	Extract the SQLcraft folder to a web-accessible location on your server. If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc. Configure the variables in config.php to your liking. Some modules will include their own configuration file to set variables only they use.
 
 CHANGELOG
-	03.09.2011-08:31AM
-		Configuration file now works
+	03.10.2011-01:26AM - 0.1.1
+		SQLcraft Core
+			Template and drag-and-drop add-in functionality finished. Looks meh can can be easily tweaked later in the stylesheet.
+	03.09.2011-05:42PM - 0.1.0
+		KiwiAdmin Module
+			Added a config file to specify the name of the banlist table
+			Added unban functionality
+			Implemented 'reloadka' with the help of lahwran and Jomik <3
+			The entry of no-name rows is now impossible
+			Put ban and unban ABOVE the ban list so that they are easily accessable regardless of the number of listed bans
 	03.09.2011-12:45PM
 		SQLcraft core
 			Added additional variables to config.php
@@ -29,10 +38,5 @@ CHANGELOG
 		KiwiAdmin Module
 			Added experimental support for 'ka reload' 'injection' into server screen
 			^(this will only ettempt to execute if $sc_local AND $sc_linux == true, and even then, the correct screen name MUST be specified)
-	03.09.2011-05:42PM
-		KiwiAdmin Module
-			Added a config file to specify the name of the banlist table
-			Added unban functionality
-			Implemented 'reloadka' with the help of lahwran and Jomik <3
-			The entry of no-name rows is now impossible
-			Put ban and unban ABOVE the ban list so that they are easily accessable regardless of the number of listed bans
+	03.09.2011-08:31AM
+		Configuration file now works
