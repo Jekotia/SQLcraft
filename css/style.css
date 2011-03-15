@@ -14,8 +14,6 @@ div#header {
 	padding-left: 10px;
 	height: 75px;
 	background: #262525;
-	/*background: url('../img/header.png');*/
-	font-family: "235MKULA";
 	font-size: 40pt;
 	font-variant: small-caps;
 	border-bottom: 1px solid #000;
@@ -37,7 +35,7 @@ div#right {
 	padding: 20px;
 	float: right;
 	width: 756px;
-	height: 100%;
+	height: auto;
 	background: #333030;
 	border-left: 1px solid #000;
 }
@@ -46,20 +44,28 @@ div#footer {
 	float: none;
 	background: #262525;
 	border-top: 1px solid #000;
+	text-align: center;
+	padding-bottom: 4px;
 }
 
 div.nav {
-	background: url("../img/inactive.png");
-	width: auto;
+	width: 100%;
 	height: 20px;
 	text-align: left;
 	border-bottom: 1px solid #000;
-	text-transform: uppercase;
+	font-variant: small-caps;
 	text-indent: 5px;
 }
 
+div#system, div#modules, div#logout {
+	width: 100%;
+	background-color: #262525;
+	text-align: center;
+}
 
-div#contrib {border-bottom: none;}
+	/*a#".$page.":link, a#".$page.":visited {color:#000;}</style>*/
+
+/*div#contrib {border-bottom: none;}*/
 
 a.nav:link, a.nav:visited {
 	color:#fff;

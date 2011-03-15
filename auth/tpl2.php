@@ -1,5 +1,4 @@
-</div>
-				<br class="clearfloat" />
+				</div>
 				<div id="footer">
 					<?php include_once ''.$sc_path_fs.'/footer.php'; ?>
 				</div>

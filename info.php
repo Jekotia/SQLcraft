@@ -1,7 +1,6 @@
 <?php	
 	//includes config and MySQL auth
-		include_once 'config.php';
-		include_once ''.$sc_path_sc.'auth.php';
+		include_once 'init.php';
 
 	//Reports the document root
 		echo "SQLcraft's Document Root is ".$_SERVER["DOCUMENT_ROOT"]."";
@@ -37,7 +36,13 @@
 				echo "<br /><br />Linux only functionality is <u>disabled</u>";
 			}
 		}
-		
-	//
-		
+	//Simple check of the auth_enabled variable
+		if ($auth_enabled == false)
+		{
+			echo "<br /><br />SQLcraft's built-in authentication system is <u>not</u> in use.";
+		}
+		elseif ($sc_local == true)
+		{
+			echo "<br /><br />SQLcraft's built-in authentication system <b>is</b> in use.";
+		}
 ?>

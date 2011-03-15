@@ -1,7 +1,7 @@
 <?php
-		include_once 'init.php';
-		$page_title = 'SQLcraft - Template';
-		$page = 'template';
+		include_once '../../init.php';
+		$page_title = 'Homes Converter - Overview';
+		$page = 'HomesConverter';
 		include_once ''.$sc_path_fs.'/tpl1.php';
 ?>
 Make a copy of the contents of this file.<br />

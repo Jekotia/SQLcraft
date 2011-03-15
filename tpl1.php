@@ -1,13 +1,10 @@
-<?php
-		include_once 'config.php';
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
 		<?php
-		echo "<link rel='shortcut icon' type='image/gif' href='".$sc_path_wr."favicon.gif' />
-		";	echo "<link rel='stylesheet' href='".$sc_path_wr."css/style.css' type='text/css' />
+		echo "<link rel='shortcut icon' type='image/gif' href='".$sc_path_wr."/favicon.gif' />
+		";	echo "<link rel='stylesheet' href='".$sc_path_wr."/css/style.css' type='text/css' />
 		";	echo "<title>".$page_title."</title>
 		";	echo "<style> div#".$page." {width: auto; background-color: #fff; text-align: right; padding-right: 5px;} a#".$page.":link, a#".$page.":visited {color:#000;}</style>
 		";?>
@@ -17,15 +14,18 @@
 			<div id="border">
 				<div id="header">
 					SQLcraft
-					<span id="header">0.1.0</span>
+					<span id="header"><?php echo $sc_ver; ?></span>
 				</div>
 				<div id="left">
 					<div id="index" class='nav'>
-						<a id="index" class="nav" href="<?php echo $sc_path_wr; ?>index.php">Home</a>
+						<a id="index" class="nav" href="<?php echo $sc_path_wr; ?>/home.php">Home</a>
+					</div>
+					<div id="modules" class="nav">
+						Modules
 					</div>
 					<?php
 						// open this directory 
-							$myDirectory = opendir("".$sc_path_fs."modules");
+							$myDirectory = opendir("".$sc_path_fs."/modules");
 						// get each entry
 							while($entryName = readdir($myDirectory)) {
 								$dirArray[] = $entryName;
@@ -41,18 +41,30 @@
 						        if (substr("$dirArray[$index]", 0, 1) != "."){ // don't list hidden files
 									echo '<div id="'.$dirArray[$index].'"class="nav">
 									';
-									echo 	'<a id='.$dirArray[$index].' class="nav" href="'.$sc_path_wr.'modules/'.$dirArray[$index].'/" >'.$dirArray[$index].'</a>
+									echo 	'<a id='.$dirArray[$index].' class="nav" href="'.$sc_path_wr.'/modules/'.$dirArray[$index].'/" >'.$dirArray[$index].'</a>
 									';
 									echo '</div>
 									';
 								}
 							}
 					?>
+					<div id="system" class="nav">
+						System
+					</div>
+					<div id="manageusers" class='nav'>
+						<a id="manageusers" class='nav' href='<?php echo $sc_path_wr; ?>/auth/manage.php'>Manage Users</a>
+					</div>
 					<div id="template" class='nav'>
-						<a id="template" class='nav' href='<?php echo $sc_path_wr; ?>template.php'>Template</a>
+						<a id="template" class='nav' href='<?php echo $sc_path_wr; ?>/template.php'>Template</a>
 					</div>
 					<div id="contrib" class='nav'>
-						<a id="contrib" class='nav' href='<?php echo $sc_path_wr; ?>contrib.php'>Contributors</a>
+						<a id="contrib" class='nav' href='<?php echo $sc_path_wr; ?>/contrib.php'>Contributors</a>
+					</div>
+					<div id="changepass" class='nav'>
+						<a id="changepass" class='nav' href='<?php echo $sc_path_wr; ?>/auth/changepassword.php'>Change Password</a>
+					</div>
+					<div id="logout" class='nav'>
+						<a id="logout" class='nav' href='<?php echo $sc_path_wr; ?>/auth/logout.php'>Logout</a>
 					</div>
 				</div>
 				<div id="right">
