@@ -1,12 +1,20 @@
 <?
 session_start();
-if(!session_is_registered(auth_username)){
-//header("location:../home.php");
-}
+//if(!session_is_registered(auth_username)){header("location:../home.php");}
+
+$cookie_name = $_SESSION['cookie_name'];
+$cookie_token = $_SESSION['cookie_token'];
+
+//setcookie("sqlcraft_user", "$cookie_name", time()+1800);
+//setcookie("sqlcraft_token", "$cookie_token", time()+1800);
+echo $_COOKIE['sqlcraft_user'];
+echo $_COOKIE['sqlcraft_token'];
+//setcookie("user","'$login_user'","time()+1800"); 
+
 ?>
 
 <?php 
-	$ignore_redirect = true;
+	$ignore_redirect = false;
 	include_once "../init.php";
 	$page_title = "SQLcraft - Logout";
 	include_once "tpl1.php";

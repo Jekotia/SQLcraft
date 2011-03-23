@@ -1,8 +1,7 @@
 @CHARSET "ISO-8859-1";
 
 
-body {margin: 0; background-color: #262525; padding-top: 20px;}
-div {color: #FFF;}
+body {margin: 0; background-color: #262525; padding-top: 20px; color: #FFF;}
 
 div#header, div#container, div#left, div#footer {margin: 0;}
 

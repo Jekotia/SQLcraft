@@ -24,25 +24,41 @@
 	//The name of the the screen session the Minecraft server is run in
 		$sc_screen 			=	'mcserver';
 	//Enable or disable the built in, buggy authentication system
-		$auth_enabled		=	false;
+		$auth_enabled		=	true;
+	//WARNING: Debug mode is intended for developers only and should not be used on a SQLcraft
+	//installation connected to a server. It reveals data that could compromise a 'live'
+	//installation, such as passwords. It is intended for DEVELOPMENT PURPOSES ONLY
+		$debug				=	false;
+		//$auth_enabled == true and $ignore_redirect == false and 
 		
 		include_once ''.$sc_path_fs.'/mysql.php';
-
-	if ($auth_enabled == true)
-	{
-		if ($ignore_redirect == false)
+		if (isset($_COOKIE["sqlcraft_user"]) and isset($_COOKIE["sqlcraft_token"]))
 		{
-			//session_start();
-			if(!session_is_registered(auth_username))
-			{
-				$head_loc = $sc_path_wr.'/index.php';
-				//header("location:'$head_loc'");
-				//header("location:''.$head_loc.'/SQLcraft/auth/login.php'");
-				//header("location:/SQLcraft/auth/login.php");
-				header( "Location:".$head_loc."");
-			}
+			echo $_COOKIE["sqlcraft_user"];
+			$cookie_user = $_COOKIE['sqlcraft_user'];
+			echo '<br />'.$_COOKIE['sqlcraft_user'];
+			echo $_COOKIE["sqlcraft_token"];
+			$cookie_token = $_COOKIE['sqlcraft_token'];
+			echo '<br />'.$_COOKIE['sqlcraft_token'];
+			
+			$db = ''.$sc_path_fs.'/sqlcraft.db';
+			$db = new SQLite3($db);
+			$result = $db->query("SELECT * FROM users WHERE username='$cookie_user' and token='$cookie_token'");
+			while($row = $result->fetchArray(SQLITE3_ASSOC))
+			if($cookie_user = $row['username'] and $cookie_token = $row['token']){;}
 		}
-	}
-	
+	 	{
+			
+			
+	 	}
+	 	if ($ignore_redirect==true)
+	 	{
+	 		;
+	 	}
+		else
+		{
+			echo "DERP";
+			//header("location:".$sc_path_wr."");
+		}
 	$sc_ver 				=	'0.1.1';
 ?>

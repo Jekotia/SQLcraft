@@ -1,8 +1,8 @@
 @CHARSET "ISO-8859-1";
 
 
-body {margin: 0; background-color: #262525; /*padding-top: 20px;*/}
-div {color: #FFF;}
+body {margin: 0; background-color: #262525; /*padding-top: 20px;*/color: #FFF;}
+div {}
 div#container, div#border, div#content {margin: 0;}
 .clearfloat {clear: both; height: 0; font-size: 1px; line-height: 0px;}
 div#container {width: 490px; /*height: 300px;*/ background-color: #211010; margin: auto; border: 1px solid #000; padding: 10px;}
@@ -36,6 +36,19 @@ div#footer {
 	border-top: 1px solid #000;
 	text-align: center;
 	padding-bottom: 4px;
+}
+
+.bad_login {
+	color: #ff1a00;
+	font-weight: bold;
+}
+
+a.nav:link, a.nav:visited {
+	color:#fff;
+	text-decoration: none;
+	width: 100%;
+	display: block;
+	border-left: 0;
 }
 
 

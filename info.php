@@ -1,4 +1,5 @@
-<?php	
+<?php
+		$ignore_redirect = false;	
 	//includes config and MySQL auth
 		include_once 'init.php';
 

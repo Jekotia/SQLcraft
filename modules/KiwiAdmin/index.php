@@ -1,4 +1,5 @@
 <?php
+		$ignore_redirect = false;
 		include_once '../../init.php';
 		include_once ''.$sc_path_fs.'/modules/KiwiAdmin/config.php';
 		$page_title = 'SQLcraft - KiwiAdmin Module - Overview';

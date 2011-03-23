@@ -5,11 +5,11 @@ Replace *'s with values.
 
 
 <?php
-		include_once '../../config.php';
-		include_once ''.$sc_path_sc.'auth.php';
-		include_once ''.$sc_path_sc.'modules/ModuleName/config.php';
-		$page_title = 'SQLcraft - Module Name - Name of Page Within Module';
-		include_once ''.$sc_path_sc.'tpl1.php';
+		$ignore_redirect = true; //Set to true if this page should ignore the redirect to the login screen if a visitor is not signed in
+		include_once '../../init.php'; //Includes the 'initialization' script. Essentialls atatches the SQLcraft core to a module
+		include_once ''.$sc_path_sc.'modules/ModuleName/config.php'; //
+		$page_title = 'SQLcraft - Module Name - Name of Page Within Module'; //
+		include_once ''.$sc_path_sc.'tpl1.php'; //
 ?>
 	Module specific code
 <?php		
@@ -20,3 +20,7 @@ The files tpl1.php and tpl2.php would contain all of the template HTML for SQLcr
 This makes adding modules a drag-and-drop operation.
 
 This is still a WIP and any feedback/suggestions on the structure would be greatly appreciated.
+
+Core modules will be found in the root folder and while removable, it is HIGHLY recommended they are not removed.
+
+Current core modules: User Authentication

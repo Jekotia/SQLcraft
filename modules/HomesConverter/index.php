@@ -1,4 +1,5 @@
 <?php
+		$ignore_redirect = false;
 		include_once '../../init.php';
 		$page_title = 'Homes Converter - Overview';
 		$page = 'HomesConverter';
