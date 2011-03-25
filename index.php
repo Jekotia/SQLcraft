@@ -1,7 +1,7 @@
 <?php 
+	session_start();
 	$ignore_redirect = true;
 	// Retrieve the PHP variable (using PHP).
-	session_start();
 	$valid_login = $_SESSION['valid_login'];
 	//echo $valid_login;
 	include_once "init.php";

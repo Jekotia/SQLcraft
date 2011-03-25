@@ -1,4 +1,5 @@
 <?php
+		session_start();
 		$ignore_redirect = false;
 		include_once 'init.php';
 		$page_title = 'SQLcraft - Template';

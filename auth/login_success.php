@@ -1,14 +1,19 @@
 <?
 session_start();
+
+
+
 //if(!session_is_registered(auth_username)){header("location:../home.php");}
 
-$cookie_name = $_SESSION['cookie_name'];
-$cookie_token = $_SESSION['cookie_token'];
+//$cookie_user = $_SESSION['cookie_user'];
+//$cookie_token = $_SESSION['cookie_token'];
+//echo $_SESSION['cookie_user'];
+//echo $_SESSION['cookie_token'];
 
 //setcookie("sqlcraft_user", "$cookie_name", time()+1800);
 //setcookie("sqlcraft_token", "$cookie_token", time()+1800);
-echo $_COOKIE['sqlcraft_user'];
-echo $_COOKIE['sqlcraft_token'];
+//echo '<br />COOKIE1 '.$_COOKIE['sqlcraft_user'];
+//echo '<br />COOKIE2 '.$_COOKIE['sqlcraft_token'];
 //setcookie("user","'$login_user'","time()+1800"); 
 
 ?>
@@ -16,6 +21,8 @@ echo $_COOKIE['sqlcraft_token'];
 <?php 
 	$ignore_redirect = false;
 	include_once "../init.php";
+if ($debug==true){echo '<br />COOKIE1'.$_COOKIE["sqlcraft_user"].'';}
+if ($debug==true){echo '<br />COOKIE2'.$_COOKIE["sqlcraft_token"].'';}
 	$page_title = "SQLcraft - Logout";
 	include_once "tpl1.php";
 ?>

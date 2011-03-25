@@ -1,4 +1,5 @@
 <?php	//Excessive debug you say? yes, most certaintly. This page gave me hours of trouble, and I don't feel like removing all of those useful debug lines since I may need them again.
+		session_start();
 		$ignore_redirect = true;
 		//'Initialize' SQLcraft
 		include_once '../init.php';
@@ -77,21 +78,20 @@ if ($debug==true){echo '<br />'.$db_token_2.'';}
 if ($debug==true){echo '<br />'.$db_token.'';}
 
 			$db->exec(" UPDATE users SET token='".$db_token."' WHERE username='".$db_username."' ");
-if ($debug==true){echo '<br />'.$db_token.'';}
-			$db_token=$db_token;
 if ($debug==true){echo "<br /> $db_token";}
-			setcookie("sqlcraft_user", "$db_username", time()+1800);
-if ($debug==true){echo '<br />'.$_COOKIE['sqlcraft_user'].'';}
-			setcookie("sqlcraft_token", "$db_token", time()+1800);
-if ($debug==true){echo '<br />'.$_COOKIE['sqlcraft_token'].'';}
+			//$db_token=$db_token;
 if ($debug==true){echo "<br /> $db_token";}
-			session_start();			
-			$_SESSION['cookie_name'] = $cookie_name;
-			$_SESSION['cookie_token'] = $cookie_token;
+			setcookie("sqlcraft_user", "$db_username", time()+1800, '/');
+//if ($debug==true){echo '<br />COOKIE1'.$_COOKIE["sqlcraft_user"].'';}
+			setcookie("sqlcraft_token", "$db_token", time()+1800, '/');
+//if ($debug==true){echo '<br />COOKIE2'.$_COOKIE["sqlcraft_token"].'';}
+if ($debug==true){echo "<br /> $db_token";}			
+			//$_SESSION['cookie_user'] = $cookie_user;
+			//$_SESSION['cookie_token'] = $cookie_token;
 
 			//echo("$auth_username,$auth_password,$db_username,$db_password");
 if ($debug==false){header("location:login_success.php");}
-if ($debug==true){echo '<br /><br /><b>The end of that if</b>';}
+if ($debug==true){echo '<br /><br /><b>The end of that if</b>'; echo '<br /><a href="login_success.php">NEXT</a>';}
 		}
 		else
 		{

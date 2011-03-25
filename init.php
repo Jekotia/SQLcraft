@@ -32,12 +32,25 @@
 		//$auth_enabled == true and $ignore_redirect == false and 
 		
 		include_once ''.$sc_path_fs.'/mysql.php';
+
+		if (isset($_COOKIE["sqlcraft_user"]))
+  			echo "<br />Welcome " . $_COOKIE["sqlcraft_user"] . "!";
+		else
+  			echo "<br />Welcome guest!";
+
+  		if (isset($_COOKIE["sqlcraft_token"]))
+  			echo "," . $_COOKIE["sqlcraft_token"] . "!";
+  			
+		//echo '<br />COOKIE1 '.$_COOKIE['sqlcraft_user'];
+		//echo '<br />COOKIE2 '.$_COOKIE['sqlcraft_token'];
+		//echo "<br /><br /><br />";
 		if (isset($_COOKIE["sqlcraft_user"]) and isset($_COOKIE["sqlcraft_token"]))
 		{
-			echo $_COOKIE["sqlcraft_user"];
+			echo '<br />'.$_COOKIE['sqlcraft_user'];
 			$cookie_user = $_COOKIE['sqlcraft_user'];
 			echo '<br />'.$_COOKIE['sqlcraft_user'];
-			echo $_COOKIE["sqlcraft_token"];
+
+			echo '<br />'.$_COOKIE['sqlcraft_token'];
 			$cookie_token = $_COOKIE['sqlcraft_token'];
 			echo '<br />'.$_COOKIE['sqlcraft_token'];
 			
@@ -46,19 +59,23 @@
 			$result = $db->query("SELECT * FROM users WHERE username='$cookie_user' and token='$cookie_token'");
 			while($row = $result->fetchArray(SQLITE3_ASSOC))
 			if($cookie_user = $row['username'] and $cookie_token = $row['token']){;}
+			$cookie_valid = true;
 		}
+		elseif ($ignore_redirect==false)
 	 	{
-			
-			
+			$cookie_valid = false;
+			echo '$cookie_valid = false;';
+			header("location:".$sc_path_wr."");
 	 	}
 	 	if ($ignore_redirect==true)
 	 	{
-	 		;
+	 		echo "derp";
 	 	}
 		else
 		{
-			echo "DERP";
+			echo "-DERP-";
 			//header("location:".$sc_path_wr."");
-		}
+		}		
+		
 	$sc_ver 				=	'0.1.1';
 ?>
