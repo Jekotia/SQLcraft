@@ -1,22 +1,15 @@
-SQLcraft will mainly use directory structure and PHP loops/includes in order to achieve the modular design of the project.
-This file is both a personal reference on how to structure the project, as well as a reference for those that wish to help.
-Not all of the referenced files exist yet; this reference is intended to be future proof so that scripts do not need to be updated later.
-Replace *'s with values.
+SQLcraft will mainly use directory structure and PHP loops/includes in order to
+achieve the modular design of the project. This file is both a personal reference
+on how to structure the project, as well as a reference for those that wish to help.
+Not all of the referenced files exist yet; this reference is intended to be future
+proof so that scripts do not need to be updated later.
 
+The files '/tpl1.php' and '/tpl2.php' contains all of the template HTML for SQLcraft,
+and the navigation menu is generated based on directory names under the '/modules/'
+directory. '/init.php' is the 'initialization' script that contains the configuration data,
+connects to the MySQL database, if any, and checks if the user is logged in. The contents
+of the '/auth/' folder handles user authentication.
 
-<?php
-		$ignore_redirect = true; //Set to true if this page should ignore the redirect to the login screen if a visitor is not signed in
-		include_once '../../init.php'; //Includes the 'initialization' script. Essentialls atatches the SQLcraft core to a module
-		include_once ''.$sc_path_sc.'modules/ModuleName/config.php'; //
-		$page_title = 'SQLcraft - Module Name - Name of Page Within Module'; //
-		include_once ''.$sc_path_sc.'tpl1.php'; //
-?>
-	Module specific code
-<?php		
-		include_once ''.$sc_path_sc.'tpl2.php';
-?>
-
-The files tpl1.php and tpl2.php would contain all of the template HTML for SQLcraft, and the navigation menu would be generated based on directory names under the 'modules' directory.
 This makes adding modules a drag-and-drop operation.
 
 This is still a WIP and any feedback/suggestions on the structure would be greatly appreciated.

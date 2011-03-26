@@ -20,7 +20,15 @@ div#header {
 	text-indent: 40px;
 }
 span#header {
+	font-size: 10pt;
+	vertical-align: bottom;
+}
+div#page_head {
+	float: right;
 	font-size: 22pt;
+	vertical-align: middle;
+	padding-right: 30px;
+	padding-top: 17px;
 }
 
 div#left {

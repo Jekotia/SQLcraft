@@ -5,7 +5,7 @@
 		<?php
 		echo "<link rel='shortcut icon' type='image/gif' href='".$sc_path_wr."/favicon.gif' />
 		";	echo "<link rel='stylesheet' href='".$sc_path_wr."/css/style.css' type='text/css' />
-		";	echo "<title>".$page_title."</title>
+		";	echo "<title>SQLcraft - ".$page_title."</title>
 		";	echo "<style> div#".$page." {width: auto; background-color: #fff; text-align: right; padding-right: 5px;} a#".$page.":link, a#".$page.":visited {color:#000;}</style>
 		";?>
 	</head>
@@ -13,12 +13,11 @@
 		<div id="container">
 			<div id="border">
 				<div id="header">
-					SQLcraft
-					<span id="header"><?php echo $sc_ver; ?></span>
+					SQLcraft<span id="header"><?php echo $sc_ver;?></span><div id="page_head"><?php echo $page_title; ?></div>
 				</div>
 				<div id="left">
-					<div id="index" class='nav'>
-						<a id="index" class="nav" href="<?php echo $sc_path_wr; ?>/home.php">Home</a>
+					<div id="home" class="nav">
+						<a id="home" class="nav" href="<?php echo $sc_path_wr; ?>/home.php">Home</a>
 					</div>
 					<div id="modules" class="nav">
 						Modules
@@ -51,20 +50,26 @@
 					<div id="system" class="nav">
 						System
 					</div>
-					<div id="manageusers" class='nav'>
-						<a id="manageusers" class='nav' href='<?php echo $sc_path_wr; ?>/auth/manage.php'>Manage Users</a>
+					<?php
+						if ($auth_enabled == true) {
+						echo '<div id="manageusers" class="nav">';
+						echo '<a id="manageusers" class="nav" href="'.$sc_path_wr.'/auth/manage.php">Manage Users</a>';
+						echo '</div>';}
+					?>
+					<div id="template" class="nav">
+						<a id="template" class="nav" href='<?php echo $sc_path_wr; ?>/template.php'>Template</a>
 					</div>
-					<div id="template" class='nav'>
-						<a id="template" class='nav' href='<?php echo $sc_path_wr; ?>/template.php'>Template</a>
+					<div id="contrib" class="nav">
+						<a id="contrib" class="nav" href='<?php echo $sc_path_wr; ?>/contrib.php'>Contributors</a>
 					</div>
-					<div id="contrib" class='nav'>
-						<a id="contrib" class='nav' href='<?php echo $sc_path_wr; ?>/contrib.php'>Contributors</a>
+					<?php
+						if ($auth_enabled == true) {
+						echo '<div id="changepass" class="nav">
+						<a id="changepass" class="nav" href="'.$sc_path_wr.'/auth/changepassword.php">Change Password</a>
 					</div>
-					<div id="changepass" class='nav'>
-						<a id="changepass" class='nav' href='<?php echo $sc_path_wr; ?>/auth/changepassword.php'>Change Password</a>
-					</div>
-					<div id="logout" class='nav'>
-						<a id="logout" class='nav' href='<?php echo $sc_path_wr; ?>/auth/logout.php'>Logout</a>
-					</div>
+					<div id="logout" class="nav">
+						<a id="logout" class="nav" href="'.$sc_path_wr.'/auth/logout.php">Logout</a>
+					</div>';}
+					?>
 				</div>
 				<div id="right">

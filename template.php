@@ -1,10 +1,10 @@
 <?php
-		session_start();
-		$ignore_redirect = false;
-		include_once 'init.php';
-		$page_title = 'SQLcraft - Template';
-		$page = 'template';
-		include_once ''.$sc_path_fs.'/tpl1.php';
+	session_start();
+	$ignore_redirect = false;
+	include_once 'init.php';
+	$page_title = 'Template';
+	$page = 'template';
+	include_once ''.$sc_path_fs.'/tpl1.php';
 ?>
 Make a copy of the contents of this file.<br />
 Replace the value of the $page variable with the CASE SENSITIVE folder name used for your module.<br />

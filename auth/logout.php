@@ -2,7 +2,8 @@
 	session_start();
 	$ignore_redirect = true;
 	include_once "../init.php";
-	$page_title = "SQLcraft - Logout";
+	if ($auth_enabled == false){header("location:../home.php");}
+	$page_title = "Logout";
 	include_once "tpl1.php";
 	
 	setcookie("sqlcraft_user", "", time()-1800, '/');
