@@ -7,12 +7,15 @@
 	$page_title = 'Manage Users';
 	$page = 'manageusers';
 	include_once ''.$sc_path_fs.'/tpl1.php';
-?>
 
+//Pretty much useless as-is base code. Copied from another script in the project as a starting point.
 			$db = '../sqlcraft.db';
 			$db = new SQLite3($db);
-//Compare username and password hash against database
-			$result = $db->query("SELECT * FROM users WHERE username='$user' and password='$pass_old'");
+			$result = $db->query("SELECT * FROM users");
 			while($row = $result->fetchArray(SQLITE3_ASSOC))
+			{
+				echo $row['username'];
+			}
 
-<?php include_once ''.$sc_path_fs.'/tpl2.php'; ?>
+	include_once ''.$sc_path_fs.'/tpl2.php';
+?>

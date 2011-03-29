@@ -21,6 +21,12 @@ INSTALLATION
 	Extract the SQLcraft folder to a web-accessible location on your server. If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc. Configure the variables in config.php to your liking. Some modules will include their own configuration file to set variables only they use.
 
 CHANGELOG
+	03.26.2011
+		SQLcraft Core
+			Improved integration of login system. Logged-in user can now change password
+	03.25.2011
+		SQLcraft Core
+			Login system now works
 	03.10.2011-01:26AM - 0.1.1
 		SQLcraft Core
 			Template and drag-and-drop add-in functionality finished. Looks meh can can be easily tweaked later in the stylesheet.
