@@ -1,6 +1,15 @@
 				</div>
 				<div id="footer">
-					<?php include_once ''.$sc_path_fs.'/footer.php'; ?>
+					<?php
+						if (isset($page) AND $page === 'index')
+						{
+							include_once 'footer.php';
+						}
+						else
+						{
+							include_once '../footer.php';
+						}
+					?>
 				</div>
 			</div>
 		</div>

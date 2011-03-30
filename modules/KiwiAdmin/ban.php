@@ -1,11 +1,12 @@
 <?php
+	$db = 'sqlcraft.db';
 	session_start();
 	$ignore_redirect = false;
 	include_once '../../init.php';
-	include_once ''.$sc_path_fs.'/modules/KiwiAdmin/config.php';
+	include_once 'config.php';
 	$page_title = 'KiwiAdmin Module - Ban Script';
 	$page = 'KiwiAdmin';
-	include_once ''.$sc_path_fs.'/tpl1.php';
+	include_once '../../tpl1.php';
 
 //Gets ban query data from $_POST
 	$addban_name = $_POST['addban_name'];
@@ -51,5 +52,5 @@
 		}
 		echo "<br />Click <a href='index.php'>here</a> to continue.";
 	}
-	include_once ''.$sc_path_fs.'/tpl2.php';
+	include_once '../../tpl2.php';
 ?>

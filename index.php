@@ -1,15 +1,17 @@
 <?php 
+	$db = 'sqlcraft.db';
 	session_start();
-	if (isset($_COOKIE["sqlcraft_user"]) and isset($_COOKIE["sqlcraft_token"])) {
+	if (isset($_COOKIE['sqlcraft_user']) and isset($_COOKIE['sqlcraft_token'])) {
 		header("location:home.php");
 	}
 	$ignore_redirect = true;
 // Retrieve the PHP variable (using PHP).
 	$valid_login = $_SESSION['valid_login'];
 //echo $valid_login;
-	include_once "init.php";
-	if ($auth_enabled == false){header("location:home.php");}
-	$page_title = "SQLcraft - Login";
+	include_once 'init.php';
+	if ($sc_auth == false){header('location:home.php');}
+	$page_title = 'SQLcraft - Login';
+	$page = 'index';
 	include_once 'auth/tpl1.php';
 ?>
 	<form name="login" method="post" action="auth/checklogin.php">

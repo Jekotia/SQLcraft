@@ -2,29 +2,41 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
-		<?php
-		echo "<link rel='shortcut icon' type='image/gif' href='".$sc_path_wr."/favicon.gif' />
-		";	echo "<link rel='stylesheet' href='".$sc_path_wr."/css/style.css' type='text/css' />
-		";	echo "<title>SQLcraft - ".$page_title."</title>
-		";	echo "<style> div#".$page." {width: auto; background-color: #fff; text-align: right; padding-right: 5px;} a#".$page.":link, a#".$page.":visited {color:#000;}</style>
-		";?>
+		<link rel="shortcut icon" type="image/gif" href="<?php echo $path_wr ?>/favicon.gif" />
+		<link rel="stylesheet" href="<?php echo $path_wr; ?>./css/style.css" type="text/css" />
+		<title>
+			SQLcraft - <?php echo $page_title; ?> 
+		</title>
+		<style>
+			div#<?php echo $page; ?> {width: auto; background-color: #fff; text-align: right; padding-right: 5px;} a#<?php echo $page; ?>:link, a#<?php echo $page; ?>:visited {color:#000;}
+		</style>
 	</head>
 	<body>
 		<div id="container">
 			<div id="border">
 				<div id="header">
-					SQLcraft<span id="header"><?php echo $sc_ver;?></span><div id="page_head"><?php echo $page_title; ?></div>
+					SQLcraft
+					<span id="header">
+						<?php echo $sc_ver;?>
+
+					</span>
+					<div id="page_head">
+						<?php echo $page_title; ?>
+
+					</div>
 				</div>
 				<div id="left">
 					<div id="home" class="nav">
-						<a id="home" class="nav" href="<?php echo $sc_path_wr; ?>/home.php">Home</a>
+						<a id="home" class="nav" href="<?php echo $path_wr; ?>/home.php">
+							Home
+						</a>
 					</div>
 					<div id="modules" class="nav">
 						Modules
 					</div>
 					<?php
 						// open this directory 
-							$myDirectory = opendir("".$sc_path_fs."/modules");
+							$myDirectory = opendir("".$path_fs."/modules");
 						// get each entry
 							while($entryName = readdir($myDirectory)) {
 								$dirArray[] = $entryName;
@@ -36,40 +48,59 @@
 						//sort 'em
 							sort($dirArray);
 						//loop through the array of files and print them all
-							for($index=0; $index < $indexCount; $index++) {
-						        if (substr("$dirArray[$index]", 0, 1) != "."){ // don't list hidden files
+							for($index=0; $index < $indexCount; $index++)
+							{
+						        if (substr("$dirArray[$index]", 0, 1) != ".")// don't list hidden files
+						        {
 									echo '<div id="'.$dirArray[$index].'"class="nav">
-									';
-									echo 	'<a id='.$dirArray[$index].' class="nav" href="'.$sc_path_wr.'/modules/'.$dirArray[$index].'/" >'.$dirArray[$index].'</a>
-									';
-									echo '</div>
-									';
+						<a id='.$dirArray[$index].' class="nav" href="'.$path_wr.'/modules/'.$dirArray[$index].'/" >
+							'.$dirArray[$index].'
+						</a>
+					</div>
+					';
 								}
 							}
 					?>
-					<div id="system" class="nav">
+<div id="system" class="nav">
 						System
 					</div>
-					<?php
-						if ($auth_enabled == true) {
-						echo '<div id="manageusers" class="nav">';
-						echo '<a id="manageusers" class="nav" href="'.$sc_path_wr.'/auth/manage.php">Manage Users</a>';
-						echo '</div>';}
-					?>
-					<div id="template" class="nav">
-						<a id="template" class="nav" href='<?php echo $sc_path_wr; ?>/template.php'>Template</a>
-					</div>
-					<div id="contrib" class="nav">
-						<a id="contrib" class="nav" href='<?php echo $sc_path_wr; ?>/contrib.php'>Contributors</a>
+					<div id="configure" class="nav">
+						<a id="configure" class="nav" href="<?php echo $path_wr; ?>/configure.php">
+							Configure
+						</a>
 					</div>
 					<?php
-						if ($auth_enabled == true) {
-						echo '<div id="changepass" class="nav">
-						<a id="changepass" class="nav" href="'.$sc_path_wr.'/auth/changepassword.php">Change Password</a>
-					</div>
-					<div id="logout" class="nav">
-						<a id="logout" class="nav" href="'.$sc_path_wr.'/auth/logout.php">Logout</a>
+						if ($sc_auth == true) {
+						echo '<div id="manageusers" class="nav">
+						<a id="manageusers" class="nav" href="'.$path_wr.'/auth/manage.php">
+							Manage Users
+						</a>
 					</div>';}
 					?>
+
+					<div id="template" class="nav">
+						<a id="template" class="nav" href="<?php echo $path_wr; ?>/template.php">
+							Template
+						</a>
+					</div>
+					<div id="contrib" class="nav">
+						<a id="contrib" class="nav" href="<?php echo $path_wr; ?>/contrib.php">
+							Contributors
+						</a>
+					</div>
+					<?php
+						if ($sc_auth == true) {
+						echo '<div id="changepass" class="nav">
+						<a id="changepass" class="nav" href="'.$path_wr.'/auth/changepassword.php">
+							Change Password
+						</a>
+					</div>
+					<div id="logout" class="nav">
+						<a id="logout" class="nav" href="'.$path_wr.'/auth/logout.php">
+							Logout
+						</a>
+					</div>';}
+					?> 
 				</div>
 				<div id="right">
+					

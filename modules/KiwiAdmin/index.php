@@ -1,11 +1,12 @@
 <?php
+	$db = '../../sqlcraft.db';
 	session_start();
 	$ignore_redirect = false;
 	include_once '../../init.php';
-	include_once ''.$sc_path_fs.'/modules/KiwiAdmin/config.php';
+	include_once 'config.php';
 	$page_title = 'KiwiAdmin Module - Overview';
 	$page = 'KiwiAdmin';
-	include_once ''.$sc_path_fs.'/tpl1.php';
+	include_once '../../tpl1.php';
 ?>
 	<form action="ban.php" method="post" name="Ban Player">
 		<fieldset>
@@ -67,4 +68,4 @@
 			?>
 	</table>
 	
-	<?php include_once ''.$sc_path_fs.'/tpl2.php'; ?>
+	<?php include_once '../../tpl2.php'; ?>

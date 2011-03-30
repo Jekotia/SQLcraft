@@ -15,5 +15,5 @@ This makes adding modules a drag-and-drop operation.
 This is still a WIP and any feedback/suggestions on the structure would be greatly appreciated.
 
 Core modules will be found in the root folder and while removable, it is HIGHLY recommended they are not removed.
-
-Current core modules: User Authentication
+These modules are:
+	-User Authentication

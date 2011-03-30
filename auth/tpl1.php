@@ -3,8 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
 		<?php
-		echo "<link rel='shortcut icon' type='image/gif' href='".$sc_path_wr."/favicon.gif' />
-		";	echo "<link rel='stylesheet' href='".$sc_path_wr."/css/auth.css' type='text/css' />
+		echo "<link rel='shortcut icon' type='image/gif' href='".$path_wr."/favicon.gif' />
+		";	echo "<link rel='stylesheet' href='".$path_wr."/css/auth.css' type='text/css' />
 		";	echo "<title>".$page_title."</title>
 		";?>
 	</head>

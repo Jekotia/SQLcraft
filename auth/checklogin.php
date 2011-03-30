@@ -1,9 +1,10 @@
 <?php
+	$db = '../sqlcraft.db';
 //Initialize
 	session_start();
 	$ignore_redirect = true;
 	include_once '../init.php';
-	if ($auth_enabled == false){header("location:../home.php");}
+	if ($sc_auth == false){header("location:../home.php");}
 //username and password sent from form
 	$auth_username = $_POST['auth_username'];
 	$auth_password = $_POST['auth_password'];

@@ -1,13 +1,13 @@
 <?php
 //if (!isset($_POST['trigger'])){$derp = md5("admin");	echo $derp;$db = '../sqlcraft.db';$db = new SQLite3($db);$db->exec("UPDATE users SET password='".$derp."' WHERE username='admin' ");}
-
+	$db = '../sqlcraft.db';
 	session_start();
 	$ignore_redirect = false;
 	include_once '../init.php';
-	if ($auth_enabled == false){header("location:../home.php");}
+	if ($sc_auth == false){header("location:../home.php");}
 	$page_title = 'Change Password';
 	$page = 'changepass';
-	include_once ''.$sc_path_fs.'/tpl1.php';
+	include_once '../tpl1.php';
 
 	if (isset($_POST['trigger']) and $_POST['trigger'] == true)
 	{
@@ -29,8 +29,6 @@
 
 		$pass_changed = false;
 
-		$db = '../sqlcraft.db';
-		$db = new SQLite3($db);
 		$result = $db->query("SELECT password FROM users WHERE username='$user'");
 		while($row = $result->fetchArray(SQLITE3_ASSOC))
 		$db_password = $row['password'];
@@ -118,4 +116,4 @@
 			<input name="trigger" type="hidden" id="trigger" value="true">
 		</form>
 	</div>';
-include_once ''.$sc_path_fs.'/tpl2.php'; ?>
+include_once '../tpl2.php'; ?>
