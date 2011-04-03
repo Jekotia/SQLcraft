@@ -50,7 +50,7 @@ a.nav:link, a.nav:visited {
 	display: block;
 	border-left: 0;
 }
-
+a.footer:link, a.footer:visited {color: #CCC;}
 
 /*div#container {width: 1000px; background-color: #211010; border: 1px solid #000; margin: auto; padding: 10px;}
 

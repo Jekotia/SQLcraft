@@ -5,6 +5,7 @@
 	include_once '../init.php';
 	if ($sc_auth == false){header('location:../home.php');}
 	$page_title = 'Login Successful';
+	$page = 'login_success';
 	include_once 'tpl1.php';
 ?>
 	<style> div#content {text-align: center; padding-top: 10px; padding-bottom: 10px;} </style>

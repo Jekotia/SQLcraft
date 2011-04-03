@@ -82,6 +82,8 @@ a.nav:link, a.nav:visited {
 	border-left: 0;
 }
 
+a.footer:link, a.footer:visited {color: #CCC;}
+
 a.nav:hover {background: #fff; color: #000;}
 
 .clearfloat {clear: both; height: 0; font-size: 1px; line-height: 0px;}

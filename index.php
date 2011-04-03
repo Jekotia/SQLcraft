@@ -42,5 +42,4 @@
 			</tr>
 		</table>
 	</form>
-	<a class="nav" href="home.php">Home</a>
 <?php include_once 'auth/tpl2.php'; ?>
