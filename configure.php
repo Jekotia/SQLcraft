@@ -85,9 +85,9 @@
 						<br />
 						sc_screen <input type="text" name="sc_screen" value="<?php echo $sc_screen; ?>"/>
 						<br />
-						cn_user <input type="text" name="sc_screen" value="<?php echo $cn_user; ?>"/>
+						cn_user <input type="text" name="cn_user" value="<?php echo $cn_user; ?>"/>
 						<br />
-						cn_token <input type="text" name="sc_screen" value="<?php echo $cn_token; ?>"/>
+						cn_token <input type="text" name="cn_token" value="<?php echo $cn_token; ?>"/>
 						<br /><br />
 						<input name="trigger" type="hidden" value="true">
 						<input type="submit" value="Save Changes" />

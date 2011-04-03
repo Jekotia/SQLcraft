@@ -36,7 +36,7 @@
 //Write the generated token to the 'token' column of the users' row in the database
 			$db->exec(" UPDATE users SET token='".$db_token."' WHERE username='".$db_username."' ");
 //Set cookies containing the username and token
-			setcookie(''.$cn_user.'', ''.md5($db_username).'', time()+1800, '/');
+			setcookie(''.$cn_user.'', ''.$db_username.'', time()+1800, '/');
 			setcookie(''.$cn_token.'', ''.$db_token.'', time()+1800, '/');
 //If debug mode is off, enable 'automatic-forwarding'
 			if ($debug==false){header("location:login_success.php");}

@@ -66,31 +66,30 @@
 
 	if ($sc_auth == true)
 	{
-		echo '1';
   		if (isset($_COOKIE[''.$cn_user.'']) and isset($_COOKIE[''.$cn_token.'']))
 		{
-			echo '2';
-			$cookie_user = md5($_COOKIE[''.$cn_user.'']);
+			$cookie_valid = false;
+			$cookie_user = $_COOKIE[''.$cn_user.''];
 			$cookie_token = $_COOKIE[''.$cn_token.''];
 			$result = $db->query('SELECT * FROM users WHERE username="'.$cookie_user.'" and token="'.$cookie_token.'"');
 			while($row = $result->fetchArray(SQLITE3_ASSOC))
-			if($cookie_user = $row['username'] and $cookie_token = $row['token'])
 			{
-				echo '3';
-				$cookie_valid = true;
-				if ($cookie_valid == false and $ignore_redirect == true)
+				if($cookie_user = $row['username'] and $cookie_token = $row['token'])
 				{
-					echo '4';
-					setcookie(''.$cn_user.'', '', time()-1800, '/');
-					setcookie(''.$cn_token.'', '', time()-1800, '/');
-					header('location:'.$path_wr);
+					$cookie_valid = true;
 				}
+			}
+			if ($cookie_valid == false)
+			{
+				setcookie(''.$cn_user.'', '', time()-1800, '/');
+				setcookie(''.$cn_token.'', '', time()-1800, '/');
+				header('location:'.$path_wr);
 			}
 		}
 		elseif ($ignore_redirect==false)
 	 	{
-			$cookie_valid = false;
-			echo '$cookie_valid = false;';
+	 		setcookie(''.$cn_user.'', '', time()-1800, '/');
+			setcookie(''.$cn_token.'', '', time()-1800, '/');
 			header('location:'.$path_wr);
 	 	}
 	}
