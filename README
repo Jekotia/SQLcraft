@@ -21,6 +21,9 @@ INSTALLATION
 	Extract the SQLcraft folder to a web-accessible location on your server. If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc. Configure the variables in config.php to your liking. Some modules will include their own configuration file to set variables only they use.
 
 CHANGELOG
+	04.02.2011-09:10PM
+		SQLCraft Core
+			Changed cookie names to hashes (increases security as it's harder to locate which cookies on a users system belong with a SQLcraft installation)
 	03.26.2011
 		SQLcraft Core
 			Improved integration of login system. Logged-in user can now change password

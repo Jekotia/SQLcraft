@@ -1,6 +1,6 @@
 <?php
-	$db = '../sqlcraft.db';
 //Initialize
+	$db = '../sqlcraft.db';
 	session_start();
 	$ignore_redirect = true;
 	include_once '../init.php';
@@ -18,9 +18,6 @@
 	$auth_password = mysql_real_escape_string($auth_password);
 //'Encrypt' the password as a md5 hash
 	$auth_password = md5($auth_password);
-//Prepare for SQLite access
-	$db = '../sqlcraft.db';
-	$db = new SQLite3($db);
 //Compare username and password hash against database
 	$result = $db->query("SELECT * FROM users WHERE username='$auth_username' and password='$auth_password'");
 		while($row = $result->fetchArray(SQLITE3_ASSOC))
@@ -39,8 +36,8 @@
 //Write the generated token to the 'token' column of the users' row in the database
 			$db->exec(" UPDATE users SET token='".$db_token."' WHERE username='".$db_username."' ");
 //Set cookies containing the username and token
-			setcookie("sqlcraft_user", "$db_username", time()+1800, '/');
-			setcookie("sqlcraft_token", "$db_token", time()+1800, '/');
+			setcookie(''.$cn_user.'', ''.md5($db_username).'', time()+1800, '/');
+			setcookie(''.$cn_token.'', ''.$db_token.'', time()+1800, '/');
 //If debug mode is off, enable 'automatic-forwarding'
 			if ($debug==false){header("location:login_success.php");}
 		}

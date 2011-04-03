@@ -4,14 +4,14 @@
 	session_start();
 	$ignore_redirect = false;
 	include_once '../init.php';
-	if ($sc_auth == false){header("location:../home.php");}
+	if ($sc_auth == false){header('location:../home.php');}
 	$page_title = 'Change Password';
 	$page = 'changepass';
 	include_once '../tpl1.php';
 
 	if (isset($_POST['trigger']) and $_POST['trigger'] == true)
 	{
-		$user = $_COOKIE['sqlcraft_user'];
+		$user = $_COOKIE[''.$cn_user.''];
 		$pass_old = $_POST['pass_old'];
 		$pass_new = $_POST['pass_new'];
 		$pass_confirm = $_POST['pass_confirm'];
@@ -26,8 +26,6 @@
 		$pass_old = md5($pass_old);
 		$pass_new = md5($pass_new);
 		$pass_confirm = md5($pass_confirm);
-
-		$pass_changed = false;
 
 		$result = $db->query("SELECT password FROM users WHERE username='$user'");
 		while($row = $result->fetchArray(SQLITE3_ASSOC))
@@ -51,9 +49,9 @@
 			$db_token_2 = rand(1000000,9999999);
 			$db_token_2 = md5($db_token_2);
 			$db_token = ($db_token_1.$db_token_2);
-			$db->exec(" UPDATE users SET token='".$db_token."' WHERE username='".$user."' ");
-			setcookie("sqlcraft_user", "$user", time()+1800, '/');
-			setcookie("sqlcraft_token", "$db_token", time()+1800, '/');
+			$db->exec(' UPDATE users SET token="'.$db_token.'" WHERE username="'.$user.'" ');
+			setcookie(''.$cn_user.'', ''.$user.'', time()+1800, '/');
+			setcookie(''.$cn_token.'', ''.$db_token.'', time()+1800, '/');
 			
 			echo '<span align="center">Password successfully updated!</span>';
 			include_once '../tpl2.php';

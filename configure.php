@@ -9,6 +9,8 @@
 
 	if (isset($_POST['trigger']) and $_POST['trigger'] == true)
 	{
+		$user = $_COOKIE[''.$cn_user.''];
+		$token = $_COOKIE[''.$cn_token.''];
 		$mysql_host = $_POST['mysql_host'];
 		$mysql_user = $_POST['mysql_user'];
 		$mysql_pass = $_POST['mysql_pass'];
@@ -26,6 +28,8 @@
 			{$sc_linux = $_POST['sc_linux'];}
 			else {$sc_linux = 0;}
 		$sc_screen = $_POST['sc_screen'];
+		$cn_user = $_POST['cn_user'];
+		$cn_token = $_POST['cn_token'];		
 		
 		$db->exec(" UPDATE configuration SET value='".$mysql_host."' WHERE id='mysql_host' ");
 		$db->exec(" UPDATE configuration SET value='".$mysql_user."' WHERE id='mysql_user' ");
@@ -40,42 +44,52 @@
 		$db->exec(" UPDATE configuration SET value='".$sc_local."' WHERE id='sc_local' ");
 		$db->exec(" UPDATE configuration SET value='".$sc_linux."' WHERE id='sc_linux' ");
 		$db->exec(" UPDATE configuration SET value='".$sc_screen."' WHERE id='sc_screen' ");
+		
+		$db->exec(" UPDATE configuration SET value='".$cn_user."' WHERE id='cn_user' ");
+		$db->exec(" UPDATE configuration SET value='".$cn_token."' WHERE id='cn_token' ");
+		
+		setcookie(''.$cn_user.'', ''.$user.'', time()+1800, '/');
+		setcookie(''.$cn_token.'', ''.$token.'', time()+1800, '/');
 
 		echo 'Configuration has been updated!';
 		include_once 'tpl2.php';
 		die();
 	}
 ?>
-	<form name="configuration" method="post" action="configure.php">
-		MySQL Settings
-		<br />
-		mysql_host <input type="text" name="mysql_host" value="<?php echo $mysql_host; ?>"/>
-		<br />
-		mysql_user <input type="text" name="mysql_user" value="<?php echo $mysql_user; ?>"/>
-		<br />
-		mysql_pass <input type="password" name="mysql_pass" value="<?php echo $mysql_pass; ?>"/>
-		<br />
-		mysql_db <input type="text" name="mysql_db" value="<?php echo $mysql_db; ?>"/>
-		<br /><br />
-		Path Settings
-		<br />
-		path_wr <input type="text" name="path_wr" value="<?php echo $path_wr; ?>"/>
-		<br />
-		path_fs <input type="text" name="path_fs" value="<?php echo $path_fs; ?>"/>
-		<br />
-		path_mc <input type="text" name="path_mc" value="<?php echo $path_mc; ?>"/>
-		<br /><br />
-		System Settings
-		<br />
-		sc_auth <input type="checkbox" name="sc_auth" value="1" <?php if ($sc_auth == true){echo 'checked';} ?>/>
-		<br />
-		sc_local <input type="checkbox" name="sc_local" value="1" <?php if ($sc_local == true){echo 'checked';} ?>/>
-		<br />
-		sc_linux <input type="checkbox" name="sc_linux" value="1" <?php if ($sc_linux == true){echo 'checked';} ?>/>
-		<br />
-		sc_screen <input type="text" name="sc_screen" value="<?php echo $sc_screen; ?>"/>
-		<br /><br />
-		<input name="trigger" type="hidden" value="true">
-		<input type="submit" value="Save Changes" />
-	</form>
+<form name="configuration" method="post" action="configure.php">
+						MySQL Settings
+						<br />
+						mysql_host <input type="text" name="mysql_host" value="<?php echo $mysql_host; ?>"/>
+						<br />
+						mysql_user <input type="text" name="mysql_user" value="<?php echo $mysql_user; ?>"/>
+						<br />
+						mysql_pass <input type="password" name="mysql_pass" value="<?php echo $mysql_pass; ?>"/>
+						<br />
+						mysql_db <input type="text" name="mysql_db" value="<?php echo $mysql_db; ?>"/>
+						<br /><br />
+						Path Settings
+						<br />
+						path_wr <input type="text" name="path_wr" value="<?php echo $path_wr; ?>"/>
+						<br />
+						path_fs <input type="text" name="path_fs" value="<?php echo $path_fs; ?>"/>
+						<br />
+						path_mc <input type="text" name="path_mc" value="<?php echo $path_mc; ?>"/>
+						<br /><br />
+						System Settings
+						<br />
+						sc_auth <input type="checkbox" name="sc_auth" value="1" <?php if ($sc_auth == true){echo 'checked';} ?>/>
+						<br />
+						sc_local <input type="checkbox" name="sc_local" value="1" <?php if ($sc_local == true){echo 'checked';} ?>/>
+						<br />
+						sc_linux <input type="checkbox" name="sc_linux" value="1" <?php if ($sc_linux == true){echo 'checked';} ?>/>
+						<br />
+						sc_screen <input type="text" name="sc_screen" value="<?php echo $sc_screen; ?>"/>
+						<br />
+						cn_user <input type="text" name="sc_screen" value="<?php echo $cn_user; ?>"/>
+						<br />
+						cn_token <input type="text" name="sc_screen" value="<?php echo $cn_token; ?>"/>
+						<br /><br />
+						<input name="trigger" type="hidden" value="true">
+						<input type="submit" value="Save Changes" />
+					</form>
 <?php include_once 'tpl2.php'; ?>
