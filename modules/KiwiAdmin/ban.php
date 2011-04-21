@@ -1,11 +1,12 @@
 <?php
-	$db = 'sqlcraft.db';
+	$db = '../../sqlcraft.db';
 	session_start();
 	$ignore_redirect = false;
 	include_once '../../init.php';
 	include_once 'config.php';
 	$page_title = 'KiwiAdmin Module - Ban Script';
 	$page = 'KiwiAdmin';
+	if ($gid >= $acl AND $sc_auth == true){include_once '../../tpl1.php';echo 'You do not have permission to access this module.';include_once '../../tpl2.php';die();}
 	include_once '../../tpl1.php';
 
 //Gets ban query data from $_POST

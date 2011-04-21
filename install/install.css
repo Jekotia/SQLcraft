@@ -1,0 +1,48 @@
+@CHARSET "ISO-8859-1";
+
+
+body {margin: 0; background-color: #262525; /*padding-top: 20px;*/color: #FFF;}
+div {}
+div#container, div#border, div#content {margin: 0;}
+.clearfloat {clear: both; height: 0; font-size: 1px; line-height: 0px;}
+div#container {width: 490px; /*height: 300px;*/ background-color: #211010; margin: auto; border: 1px solid #000; padding: 10px;}
+
+div#border {
+	width: 485px;
+	background: #333030;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 4px;
+	border: 1px solid #000;
+	background: #333030;
+}
+
+div#header {
+	background: #262525;
+	border-bottom: 1px solid #000;
+	font-size: 30pt;
+	font-variant: small-caps;
+	vertical-align: middle;
+	text-indent: 20px;
+}
+span#header {font-size: 18pt;}
+
+div#content {width:100%;height:100%;background: #333030;float:left; padding-bottom:10px;border-bottom: 1px solid #000;}
+
+div#footer {
+	float: none;
+	height:100%;
+	background: #262525;
+	text-align: center;
+	padding-bottom: 4px;
+}
+
+div#fields {margin-left: auto; margin-right: 350px; width: 310px; padding: 10px; height: auto;}
+div#field_row {	width: 310px; float: right;}
+div#field_name {width: 150px; float: left;}
+div#field_data {float: right;}
+div#submit {padding-top: 35px; padding-left: 85px;float: left;}
+div#field_name,div#field_data{height: 21px;}
+
+a:link, a:visited {color: #CCC;}
+a:hover {color: #EEE;}

@@ -31,7 +31,8 @@
 	
 	$result = $db->query("SELECT value FROM configuration WHERE id='sc_auth'");
     $row = $result->fetchArray(SQLITE3_ASSOC);
-	$sc_auth = $row['value'];
+    if ($row['value'] = 1){$sc_auth = true;}
+    elseif ($row['value'] = 0){$sc_auth = false;}
 	
 	$result = $db->query("SELECT value FROM configuration WHERE id='sc_local'");
     $row = $result->fetchArray(SQLITE3_ASSOC);
@@ -62,7 +63,7 @@
 	$debug				=	false;
 	
 		
-	include_once ''.$path_fs.'/mysql.php';
+	include_once ''.$path_fs.'mysql.php';
 
 	if ($sc_auth == true)
 	{
@@ -77,6 +78,7 @@
 				if($cookie_user = $row['username'] and $cookie_token = $row['token'])
 				{
 					$cookie_valid = true;
+					$gid = $row['gid'];
 				}
 			}
 			if ($cookie_valid == false)

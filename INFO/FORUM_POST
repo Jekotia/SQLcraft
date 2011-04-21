@@ -1,0 +1,77 @@
+[WEB/ADMIN/SQL] SQLcraft - a PHP driven web-app for administrating databases - 0.1.0
+
+[B][SIZE=7]SQLcraft[/SIZE][/B][SIZE=7]: [COLOR=green]0.1.1[/COLOR][/SIZE]
+
+[SIZE=5]INTRODUCTION[/SIZE]
+What is SQLcraft, you might ask? SQLcraft is a PHP-driven web-application in early development that is geared specifically towards administrating the MySQL and SQLite databases that Bukkit powered servers tend to use. The goal of the project is to create a modular web-application that's lightweight yet powerful. The project is free, open source, and welcomes collaborators. The modular design of SQLcraft makes it extremely easy for others to create modules and drop them into SQLcraft with zero config necessary to add them. You can find the GitHub repo [url=https://github.com/Jekotia/SQLcraft]here[/url]. 
+
+[SIZE=5]FEATURES[/SIZE]
+	[list]
+	[*]KiwiAdmin Module - REQUIRES [url=http://forums.bukkit.org/threads/admn-kiwiadmin-v1-2-kick-ban-and-unban-now-with-mysql-440.1681/]KiwiAdmin[/url] 1.0 or newer; 1.2 is recommended.
+		[list]
+		[*]View the records in the banlist table
+		[*]Add records to the banlist table
+		[*]Remove records from the banlist table
+		[*]Send 'reloadka' to server whenever a record is added or removed from the database *LINUX ONLY, REQUIRES SQLcraft TO BE RUN LOCALLY ON THE SAME BOX AS YOUR MC SERVER* 
+		[/list]
+	[/list] 
+
+[SIZE=5]TODO/PLANNED[/SIZE]
+	[list]
+	[*]SQLcraft Core
+		[list]
+		[*]Directory-based navigation generation
+		[*]Basic theme so it isn't ugly
+		[/list]
+	[*]General
+		[list]
+		[*]Take feature/plugin support requests
+		[/list]
+	[*]Modules
+		[list]
+		[*]Home and Warp converters for moving between home and warp plugins without losing data; will try to support as many plugins as possible
+		[*][url=http://forums.bukkit.org/threads/econ-iconomy-4-4-5-arcadia-400-plugin-authors-please-update.40/]iConomy[/url] support
+		[*][url=http://forums.bukkit.org/threads/admn-jail-v0-5-3-jail-bad-players-493.1912/]Jail[/url] support
+		[*][url=http://forums.bukkit.org/threads/tp-myhome-v1-9-3-now-with-respawn-to-home-493.249/]MyHome[/url] 1.8+ support
+		[*][url=http://forums.bukkit.org/threads/tp-mywarp-v1-10-3-basic-social-guiding-warpsigns-440.222/]MyWarp[/url] 1.9+ support
+		[*][url=http://forums.bukkit.org/threads/gen-spawncontrol-v0-7-per-player-group-spawns-cooldowns-permissions-optional-493.1462/]SpawnControl[/url] support
+		[/list]
+
+[size=5]INSTALLATION[/size]
+	[IMPORTANT] YOU are responsible for securing this from unauthorized use until I create a login/authorization system. I recomend using htaccess+htpasswd or equivalent; you can find a good tutorial on htaccess and htpasswd [url=http://httpd.apache.org/docs/current/howto/auth.html]here[/url].
+	Extract the SQLcraft folder to a web-accessible location on your server. If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc. Configure the variables in config.php to your liking. Some modules will include their own configuration file to set variables only they use.
+		
+
+[size=6]DOWNLOAD [COLOR=green]0.1.1[/COLOR][/size]
+[url=http://dl.dropbox.com/u/105731/Releases/SQLcraft-0.1.1.zip][size=5]Dropbox[/size][/url]
+[url=http://www.mediafire.com/?0hrrz2n424c2vxb][size=5]Mediafire[/size][/url]
+
+[spoiler=Release History]
+0.1.0
+[url=http://dl.dropbox.com/u/105731/Releases/SQLcraft-0.1.0.zip]Dropbox[/url]
+[url=http://www.mediafire.com/?akeafvcyqhkvv85]Mediafire[/url]
+[/spoiler]
+
+You can find me in #bukkit on irc.esper.net most of the time if you need any help with this or want to discuss any feature requests/suggestions/bugs/complaints/etc. If you find a bug/issue, PLEASE REPORT IT ON GITHUB! Go [url=https://github.com/Jekotia/SQLcraft/issues]here[/url] to report a bug/isue. I'd rather not use this thread as an issue-tracker. 
+
+
+CHANGELOG
+	[INDENT=1]03.10.2011-01:26AM - [color=green]0.1.1[/color][/INDENT]
+		[INDENT=2]SQLcraft Core[/INDENT]
+			[INDENT=3]Template and drag-and-drop add-in functionality finished. Looks meh can can be easily tweaked later in the stylesheet.[/INDENT]
+	[INDENT=1]03.09.2011-05:42PM - [color=green]0.1.0[/color][/INDENT]
+		[INDENT=2]KiwiAdmin Module[/INDENT]
+			[INDENT=3]Added a config file to specify the name of the banlist table
+			Added unban functionality
+			Implemented 'reloadka' with the help of lahwran and Jomik <3
+			The entry of no-name rows is now impossible
+			Put ban and unban ABOVE the ban list so that they are easily accessable regardless of the number of listed bans[/INDENT]
+	[INDENT=1]03.09.2011-12:45PM[/INDENT]
+		[INDENT=2]SQLcraft core[/INDENT]
+			[INDENT=3]Added additional variables to config.php
+			Added test.php to SQLcraft[/INDENT]
+		[INDENT=2]KiwiAdmin Module[/INDENT]
+			[INDENT=3]Added experimental support for 'ka reload' 'injection' into server screen
+			^(this will only attempt to execute if $sc_local AND $sc_linux == true, and even then, the correct screen name MUST be specified)[/INDENT]
+	[INDENT=1]03.09.2011-08:31AM
+		[INDENT=2]Configuration file now works[/INDENT]

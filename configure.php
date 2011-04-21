@@ -5,8 +5,8 @@
 	include_once 'init.php';
 	$page_title = 'Configure';
 	$page = 'configure';
+	if ($gid > 1  AND $sc_auth == true){include_once 'tpl1.php';echo 'You do not have permission to access this page.';include_once 'tpl2.php';die();}
 	include_once 'tpl1.php';
-
 	if (isset($_POST['trigger']) and $_POST['trigger'] == true)
 	{
 		$user = $_COOKIE[''.$cn_user.''];

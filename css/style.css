@@ -74,6 +74,9 @@ div#system, div#modules, div#logout {
 
 /*div#contrib {border-bottom: none;}*/
 
+a:link, a:visited {color: #CCC;}
+a:hover {color: #EEE;}
+
 a.nav:link, a.nav:visited {
 	color:#fff;
 	text-decoration: none;
@@ -82,8 +85,30 @@ a.nav:link, a.nav:visited {
 	border-left: 0;
 }
 
-a.footer:link, a.footer:visited {color: #CCC;}
-
 a.nav:hover {background: #fff; color: #000;}
 
 .clearfloat {clear: both; height: 0; font-size: 1px; line-height: 0px;}
+
+div#ctb-entry {
+	float: left;
+	background: #897046;
+}
+div#ctb-thumb {
+	float: left;
+}
+div#ctb-name {
+	float: right;
+}
+div#ctb-contrib {
+	float: left;
+}
+div#ctb-about {
+	float: left;
+}
+
+div#fields {margin-left: auto; margin-right: 350px; width: 310px; padding: 10px; height: auto;}
+div#field_row {	width: 310px; float: right;}
+div#field_name {width: 150px; float: left;}
+div#field_data {float: right;}
+div#submit {padding-top: 35px; padding-left: 85px;float: left;}
+div#field_name,div#field_data{height: 21px;}

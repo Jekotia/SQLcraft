@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">		
-		<link rel="shortcut icon" type="image/gif" href="<?php echo $path_wr ?>/favicon.gif" />
-		<link rel="stylesheet" href="<?php echo $path_wr; ?>./css/style.css" type="text/css" />
+		<link rel="shortcut icon" type="image/gif" href="<?php echo $path_wr ?>favicon.gif" />
+		<link rel="stylesheet" href="<?php echo $path_wr; ?>css/style.css" type="text/css" />
 		<title>
 			SQLcraft - <?php echo $page_title; ?> 
 		</title>
@@ -27,7 +27,7 @@
 				</div>
 				<div id="left">
 					<div id="home" class="nav">
-						<a id="home" class="nav" href="<?php echo $path_wr; ?>/home.php">
+						<a id="home" class="nav" href="<?php echo $path_wr; ?>home.php">
 							Home
 						</a>
 					</div>
@@ -36,7 +36,7 @@
 					</div>
 					<?php
 						// open this directory 
-							$myDirectory = opendir("".$path_fs."/modules");
+							$myDirectory = opendir("".$path_fs."modules");
 						// get each entry
 							while($entryName = readdir($myDirectory)) {
 								$dirArray[] = $entryName;
@@ -53,7 +53,7 @@
 						        if (substr("$dirArray[$index]", 0, 1) != ".")// don't list hidden files
 						        {
 									echo '<div id="'.$dirArray[$index].'"class="nav">
-						<a id='.$dirArray[$index].' class="nav" href="'.$path_wr.'/modules/'.$dirArray[$index].'/" >
+						<a id='.$dirArray[$index].' class="nav" href="'.$path_wr.'modules/'.$dirArray[$index].'/" >
 							'.$dirArray[$index].'
 						</a>
 					</div>
@@ -65,38 +65,38 @@
 						System
 					</div>
 					<div id="configure" class="nav">
-						<a id="configure" class="nav" href="<?php echo $path_wr; ?>/configure.php">
+						<a id="configure" class="nav" href="<?php echo $path_wr; ?>configure.php">
 							Configure
 						</a>
 					</div>
 					<?php
-						if ($sc_auth == true) {
+						if ($sc_auth == true AND $gid >= 1) {
 						echo '<div id="manageusers" class="nav">
-						<a id="manageusers" class="nav" href="'.$path_wr.'/auth/manage.php">
+						<a id="manageusers" class="nav" href="'.$path_wr.'auth/manage.php">
 							Manage Users
 						</a>
 					</div>';}
 					?>
 
 					<div id="template" class="nav">
-						<a id="template" class="nav" href="<?php echo $path_wr; ?>/template.php">
+						<a id="template" class="nav" href="<?php echo $path_wr; ?>template.php">
 							Template
 						</a>
 					</div>
 					<div id="contrib" class="nav">
-						<a id="contrib" class="nav" href="<?php echo $path_wr; ?>/contrib.php">
+						<a id="contrib" class="nav" href="<?php echo $path_wr; ?>contrib.php">
 							Contributors
 						</a>
 					</div>
 					<?php
-						if ($sc_auth == true) {
+						if ($sc_auth == true AND $gid >= 1) {
 						echo '<div id="changepass" class="nav">
-						<a id="changepass" class="nav" href="'.$path_wr.'/auth/changepassword.php">
+						<a id="changepass" class="nav" href="'.$path_wr.'auth/changepassword.php">
 							Change Password
 						</a>
 					</div>
 					<div id="logout" class="nav">
-						<a id="logout" class="nav" href="'.$path_wr.'/auth/logout.php">
+						<a id="logout" class="nav" href="'.$path_wr.'auth/logout.php">
 							Logout
 						</a>
 					</div>';}

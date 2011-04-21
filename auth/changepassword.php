@@ -87,7 +87,7 @@
 				</div>
 				<div id="field_data">
 					<input name="user" type="hidden" id="user" value"'.$_COOKIE['sqlcraft_user'].'">
-					<input name="pass_old" type="password" id="pass_old">
+					<input name="pass_old" type="password">
 				</div>
 			</div>
 			<br />
@@ -96,7 +96,7 @@
 					New Password
 				</div>
 				<div id="field_data">
-					<input name="pass_new" type="password" id="pass_new">
+					<input name="pass_new" type="password">
 				</div>
 			</div>
 			<br />
@@ -105,13 +105,13 @@
 					Confirm New Password
 				</div>
 				<div id="field_data">
-					<input name="pass_confirm" type="password" id="pass_confirm">
+					<input name="pass_confirm" type="password">
 				</div>
 			</div>
 			<div id="submit">
 				<input type="submit" name="Submit" value="Change Password">
 			</div>
-			<input name="trigger" type="hidden" id="trigger" value="true">
+			<input name="trigger" type="hidden" value="true">
 		</form>
 	</div>';
 include_once '../tpl2.php'; ?>

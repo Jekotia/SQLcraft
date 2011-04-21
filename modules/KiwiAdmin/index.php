@@ -6,6 +6,7 @@
 	include_once 'config.php';
 	$page_title = 'KiwiAdmin Module - Overview';
 	$page = 'KiwiAdmin';
+	if ($gid >= $acl AND $sc_auth == true){include_once '../../tpl1.php';echo 'You do not have permission to access this module.';include_once '../../tpl2.php';die();}
 	include_once '../../tpl1.php';
 ?>
 	<form action="ban.php" method="post" name="Ban Player">

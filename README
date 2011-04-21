@@ -1,24 +1,43 @@
 INTRODUCTION
 	SQLcraft is a PHP web-application currently in early development.
 	The goal of the project is to create a modular web-panel to ease the administration of MySQL and SQLite databases used by Minecraft servers.
-	The project is free, open source, and welcomes collaborators. 
+	The project is free, open source, and welcomes collaborators.
 
 FEATURES
+	SQLcraft Core
+		Three (3) levels of user access.
+			Owner: All modules + SQLcraft configuration/user management
+			Admin: All modules
+			Mod: Select modules, user defined
+		Notes
 	KiwiAdmin Module
 		View the banlist table
 		Add bans to the MySQL database table
 		Remove bans from the MySQL database table
-		*LINUX ONLY* Send 'reloadka' to server whenever a record is added or removed from the database 
-
-TODO
-	Feature requests (mainly plugins to support)
-	Home and Warp converters for moving between home and warp plugins without losing data
-	Basic theme so it isn't as ugly
-	Directory-based navigation menu generation
+		*LINUX ONLY* Send 'reloadka' to server whenever a record is added or removed from the database
 
 INSTALLATION
-	[IMPORTANT] YOU are responsible for securing this from unauthorized use until I create a login/authorization system. I recomend using htaccess+htpasswd or equivalent; you can find a good tutorial on htaccess and htpasswd [url=http://httpd.apache.org/docs/current/howto/auth.html]here[/url].
-	Extract the SQLcraft folder to a web-accessible location on your server. If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc. Configure the variables in config.php to your liking. Some modules will include their own configuration file to set variables only they use.
+	Extract the SQLcraft folder to a web-accessible location on your server.
+	If you put SQLcraft on your Minecraft server, this will likely be something like /var/www/, or a variation that refers to httpd, html_public, etc.
+	Navigate to /SQLcraft/install.php in your web browser to run the installation script.
+	For security reasons, this script deletes itself upon completion of the installation.
+	Some modules will include their own configuration file to set variables only they use.
+
+
+TODO
+	GENERAL
+		Feature requests (mainly plugins to support)
+	CORE
+		Installation script
+			Configure SQLcraft
+			Create first user
+		Add notes system to home.php
+			System wide (visible to all, only editable by permitted ranks)
+			Owner only
+			Admin+
+			Mod+ (aka everyone)
+	MODULES
+		Home and Warp converters for moving between home and warp plugins without losing data
 
 CHANGELOG
 	04.02.2011-09:10PM
